@@ -1,6 +1,7 @@
 package br.com.matheusdev.gestaovagas.modules.candidate;
 
 import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;
@@ -13,6 +14,7 @@ public class CandidateEntity {
     private UUID id;
     private String name;
 
+    @NotBlank()
     @Pattern(regexp = "\\S+", message = "O campo [USERNAME] não pode conter espaços.")
     private String username;
 
