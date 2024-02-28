@@ -30,3 +30,12 @@ environment:
 ```
 
 - docker-compose up -d é o usado para iniciar contêineres Docker a partir de serviços definidos em um arquivo docker-compose.yml
+
+# Fazendo conexão com o banco de dados
+
+```properties
+spring.datasource.url=jdbc:postgresql://localhost:5432/gestao_vagas
+spring.datasource.username=admin
+spring.datasource.password=admin
+spring.jpa.hibernate.ddl-auto=update
+```
