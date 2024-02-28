@@ -40,6 +40,5 @@ spring.datasource.url=jdbc:postgresql://localhost:5432/gestao_vagas
 spring.datasource.username=admin
 spring.datasource.password=admin
 spring.jpa.hibernate.ddl-auto=update
-
-Estas configurações garantem que a aplicação se conecte ao banco de dados PostgreSQL em execução no endereço localhost na porta 5432, utilizando as credenciais de usuário admin e senha admin, e que o Hibernate atualize automaticamente o esquema do banco de dados conforme necessário.
 ```
+Estas configurações garantem que a aplicação se conecte ao banco de dados PostgreSQL em execução no endereço localhost na porta 5432, utilizando as credenciais de usuário admin e senha admin, e que o Hibernate atualize automaticamente o esquema do banco de dados conforme necessário.
