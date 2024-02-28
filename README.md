@@ -12,9 +12,9 @@ Utilizei o JWT para gerar o token para o usuário e manter a segurança do proje
 
 
 # Docker
-Caso não saiba como funciona uma estrutura #DOCKER é basicamente assim:
+Caso não saiba como funciona uma estrutura docker é basicamente assim:
 
-// Criar arquivo docker-compose.yml
+- Criar arquivo docker-compose.yml
 services:
   postgres:
     container_name: gestao_vagas_postgres
