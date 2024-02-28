@@ -6,7 +6,7 @@ Ferramentas utilizadas:
 
 - InteliJ
 - Docker (PostgreSQL)
-- DBeaver
+- Postbird
 - API Dog (HTTP Request)
 
 Utilizei o JWT para gerar o token para o usuário e manter a segurança do projeto
