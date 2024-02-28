@@ -28,7 +28,7 @@ services:
       - POSTGRES_PASSWORD=admin
       - POSTGRES_DB=gestao_vagas
 
-
+```
 - docker-compose up -d é o usado para iniciar contêineres Docker a partir de serviços definidos em um arquivo docker-compose.yml
 
 # Conexão com o Banco de Dados
