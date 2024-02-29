@@ -1,6 +1,6 @@
 package br.com.matheusdev.gestaovagas.modules.candidate.useCases;
 
-import br.com.matheusdev.gestaovagas.exceptions.UseFoundException;
+import br.com.matheusdev.gestaovagas.exceptions.UserFoundException;
 import br.com.matheusdev.gestaovagas.modules.candidate.CandidateEntity;
 import br.com.matheusdev.gestaovagas.modules.candidate.controllers.CandidateRespository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +16,7 @@ public class CreateCandidateUseCase {
         this.candidateRespository
                 .findByUsernameOrEmail(candidateEntity.getUsername(), candidateEntity.getEmail())
                 .ifPresent((user) -> {
-                    throw new UseFoundException();
+                    throw new UserFoundException();
                 });
         return this.candidateRespository.save(candidateEntity);
     }

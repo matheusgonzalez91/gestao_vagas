@@ -1,7 +1,7 @@
 package br.com.matheusdev.gestaovagas.exceptions;
 
-public class UseFoundException extends RuntimeException{
-    public UseFoundException(){
+public class UserFoundException extends RuntimeException{
+    public UserFoundException(){
         super("User already exists!");
     }
 }
