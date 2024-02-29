@@ -2,7 +2,7 @@ package br.com.matheusdev.gestaovagas.modules.candidate.useCases;
 
 import br.com.matheusdev.gestaovagas.exceptions.UserFoundException;
 import br.com.matheusdev.gestaovagas.modules.candidate.CandidateEntity;
-import br.com.matheusdev.gestaovagas.modules.candidate.controllers.CandidateRespository;
+import br.com.matheusdev.gestaovagas.modules.candidate.CandidateRespository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

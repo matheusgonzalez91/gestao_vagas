@@ -1,4 +1,4 @@
-package br.com.matheusdev.gestaovagas.modules.candidate.controllers;
+package br.com.matheusdev.gestaovagas.modules.candidate;
 
 import br.com.matheusdev.gestaovagas.modules.candidate.CandidateEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
