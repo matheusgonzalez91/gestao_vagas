@@ -25,7 +25,7 @@ public class CreateCompanyUseCase {
 
         var password = passwordEncoder.encode(companyEntity.getPassword());
         companyEntity.setPassword(password);
-        
+
         return this.companyRepository.save(companyEntity);
     }
 
