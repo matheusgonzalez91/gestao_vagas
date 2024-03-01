@@ -42,3 +42,11 @@ spring.datasource.password=admin
 spring.jpa.hibernate.ddl-auto=update
 ```
 Estas configurações garantem que a aplicação se conecte ao banco de dados PostgreSQL em execução no endereço localhost na porta 5432, utilizando as credenciais de usuário admin e senha admin, e que o Hibernate atualize automaticamente o esquema do banco de dados conforme necessário.
+
+# Documentação da API com Swagger
+
+Este projeto utiliza o Swagger para documentar a API. O Swagger é uma ferramenta popular para documentar APIs de forma eficiente. Ele permite que você descreva, documente e teste suas APIs de maneira fácil e rápida. Após iniciar o aplicativo, você pode acessar a documentação da API do Swagger no seguinte URL:
+
+```bash
+http://localhost:8080/swagger-ui.html
+```
