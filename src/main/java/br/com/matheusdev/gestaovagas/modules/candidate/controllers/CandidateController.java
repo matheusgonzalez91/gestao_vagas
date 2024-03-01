@@ -26,6 +26,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/candidate")
+@Tag(name = "Candidato", description = "Informações do candidato")
 public class CandidateController {
 
     @Autowired
@@ -38,9 +39,16 @@ public class CandidateController {
     private ListAllJobsByFilterUseCase listAllJobsByFilterUseCase;
 
     @PostMapping("/")
-    public ResponseEntity<Object> create(@Valid @RequestBody CandidateEntity candidateEntity){
+    @Operation(summary = "Cadastro de candidato", description = "Essa função é responsável por listar todas as vagas disponíveis, baseada no filtro")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", content = {
+                    @Content(schema = @Schema(implementation = CandidateEntity.class))
+            }),
+            @ApiResponse(responseCode = "400", description = "User already exists!")
+    })
+    public ResponseEntity<Object> create(@Valid @RequestBody CandidateEntity createCandidateRequest){
         try {
-            var result = this.createCandidateUseCase.execute(candidateEntity);
+            var result = this.createCandidateUseCase.execute(createCandidateRequest);
             return ResponseEntity.ok().body(result);
         } catch (Exception e){
             return ResponseEntity.badRequest().body(e.getMessage());
@@ -49,8 +57,7 @@ public class CandidateController {
 
     @GetMapping("/")
     @PreAuthorize("hasRole('CANDIDATE')")
-    @Tag(name = "Candidato", description = "Informações do candidato")
-    @Operation(summary = "Perfil do candidato", description = "Essa função é responsável por buscar as informações do perfil do candidato")
+    @Operation(summary = "Perfil do candidato", description = "Essa função é responsável por cadastrar um candidato")
     @ApiResponses({
             @ApiResponse(responseCode = "200", content = {
                     @Content(schema = @Schema(implementation = ProfileCandidateResponseDTO.class))
@@ -71,7 +78,6 @@ public class CandidateController {
 
     @GetMapping("/job")
     @PreAuthorize("hasRole('CANDIDATE')")
-    @Tag(name = "Candidato", description = "Informações do candidato")
     @Operation(summary = "Listagem de vagas disponível para o candidato", description = "Essa função é responsável por listar todas as vagas disponíveis, baseada no filtro")
     @ApiResponses({
             @ApiResponse(responseCode = "200", content = {
