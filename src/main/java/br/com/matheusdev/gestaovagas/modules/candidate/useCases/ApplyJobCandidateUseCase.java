@@ -3,6 +3,7 @@ package br.com.matheusdev.gestaovagas.modules.candidate.useCases;
 import br.com.matheusdev.gestaovagas.exceptions.JobNotFoundException;
 import br.com.matheusdev.gestaovagas.exceptions.UserNotFoundException;
 import br.com.matheusdev.gestaovagas.modules.candidate.CandidateRespository;
+import br.com.matheusdev.gestaovagas.modules.candidate.repository.ApplyJobRepository;
 import br.com.matheusdev.gestaovagas.modules.company.repositories.JobRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,6 +18,9 @@ public class ApplyJobCandidateUseCase {
 
     @Autowired
     private JobRepository jobRepository;
+
+    @Autowired
+    private ApplyJobRepository applyJobRepository;
 
     public void execute(UUID idCandidate, UUID idJob){
         // Validar se o candidato existe
