@@ -1,5 +1,6 @@
 package br.com.matheusdev.gestaovagas.modules.candidate.useCases;
 
+import br.com.matheusdev.gestaovagas.exceptions.UserNotFoundException;
 import br.com.matheusdev.gestaovagas.modules.candidate.CandidateRespository;
 import br.com.matheusdev.gestaovagas.modules.candidate.dto.ProfileCandidateResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ public class ProfileCandidateUseCase {
     public ProfileCandidateResponseDTO execute(UUID idCandidate){
         var candidate = this.candidateRespository.findById(idCandidate)
                 .orElseThrow(() -> {
-                    throw new UsernameNotFoundException("User not found.");
+                    throw new UserNotFoundException();
                 });
 
         var candidateDTO = ProfileCandidateResponseDTO.builder()
